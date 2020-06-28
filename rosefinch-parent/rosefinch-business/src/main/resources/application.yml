@@ -1,0 +1,37 @@
+#所有环境公用属性
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#    health:
+#      show-details: always
+#连字符
+spring:
+  profiles:
+    active: dev
+---
+#profile=x的专用属性，也就是某个环境下的专用属性
+spring:
+  profiles: dev
+  datasource:
+    ## 配置连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    ## 配置数据库连接信息
+    url: jdbc:mysql://192.168.2.217:3306/rosefinch?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123456
+  application:
+    name: rosefinch-business
+mybatis:
+  #mybatis配置文件
+  config-location: classpath:/mybatis-config.xml
+server:
+  port: 8081
+---
+spring:
+  profiles: prod
+server:
+  tomcat:
+    max-threads: 300
+    max-connections: 1000
