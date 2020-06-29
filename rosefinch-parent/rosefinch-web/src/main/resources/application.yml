@@ -19,21 +19,11 @@ spring:
       discovery:
         #指定nacos server的地址
         server-addr: localhost:8848
-  datasource:
-    ## 配置连接池
-    type: com.alibaba.druid.pool.DruidDataSource
-    ## 配置数据库连接信息
-    url: jdbc:mysql://192.168.2.217:3306/rosefinch?useUnicode=true&characterEncoding=UTF-8
-    username: root
-    password: 123456
   ##服务名称
   application:
-    name: rosefinch-business
-mybatis:
-  #mybatis配置文件
-  config-location: classpath:/mybatis-config.xml
+    name: rosefinch-web
 server:
-  port: 8081
+  port: 8082
 ---
 spring:
   profiles: prod
