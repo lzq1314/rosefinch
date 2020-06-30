@@ -8,15 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<!-- <groupId>com.mythical</groupId> -->
 	<artifactId>rosefinch-web</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<name>rosefinch-web</name>
 	<description>web层</description>
-
-	<!-- <properties>
-		<java.version>1.8</java.version>
-	</properties> -->
 
 	<dependencies>
 		<dependency>
@@ -28,20 +22,25 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		
 		<!-- 将应用注册到Nacos -->
 		<dependency>
 	      <groupId>org.springframework.cloud</groupId>
 	      <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-	      <version>${alibaba.dependencies.version}</version>
         </dependency>
+        
+        <!-- 引入feign包 -->
+        <dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.mythical</groupId>
+			<artifactId>rosefinch-business-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>
